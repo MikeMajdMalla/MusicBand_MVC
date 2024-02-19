@@ -1,0 +1,44 @@
+﻿@model IEnumerable<MusicBand.Models.Band>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Här finns det olika band och musiker</h1>
+
+
+<p>
+    <a asp-action="Create">Skapa ett nytt band</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Band namn
+            </th>
+            <th>
+               Bildlänk
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                    <img height="100" src="@Html.DisplayFor(modelItem => item.ImageLink)" alt="">
+                   
+
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Justera</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Visa detalier</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Ta bort</a>
+            </td>
+        </tr>
+} 
+    </tbody>
+</table>

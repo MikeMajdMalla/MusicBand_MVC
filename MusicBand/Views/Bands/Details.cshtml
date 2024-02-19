@@ -1,0 +1,30 @@
+﻿@model MusicBand.Models.Band
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalier om bandet</h1>
+
+<div>
+    
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Band namn
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            Bildlänk på bandet
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ImageLink)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Justera</a> |
+    <a asp-action="Index">Tilbaka till lista</a>
+</div>

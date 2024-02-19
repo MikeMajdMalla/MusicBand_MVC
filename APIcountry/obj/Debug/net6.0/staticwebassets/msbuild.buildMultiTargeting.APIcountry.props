@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\APIcountry.props" />
+</Project>

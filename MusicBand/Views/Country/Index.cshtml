@@ -1,0 +1,46 @@
+﻿@model IEnumerable<MusicBand.Models.Country>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Här finns information om olika länder</h1>
+
+<p>
+    
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>
+               Land
+            </th>
+            <th>
+                Postnummer 
+            </th>
+            <th>
+                Kontinent
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZipCode)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Continent)
+                </td>
+            <td>
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
